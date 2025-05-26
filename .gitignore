@@ -167,4 +167,30 @@ gradle-app.setting
 # Java heap dump
 *.hprof
 
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
+
+# Files from Forge MDK
+forge*changelog.txt
+
 # End of https://www.toptal.com/developers/gitignore/api/java,gradle,intellij
