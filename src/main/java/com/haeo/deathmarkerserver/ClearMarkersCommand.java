@@ -20,13 +20,12 @@ public class ClearMarkersCommand {
     }
 
     private static int executeClearAll(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
-        int count = DeathMarkerManager.getActiveMarkers().size(); // 제거 전 마커 수
-        DeathMarkerManager.clearAllMarkers(); // 모든 마커 제거 로직 호출
+        int count = DeathMarkerManager.getActiveMarkerCount(); // 수정된 메소드 사용
+        DeathMarkerManager.clearAllMarkers();
 
-        // 명령어 실행자에게 성공 메시지 전송
         context.getSource().sendSuccess(() -> Component.literal(count + "개의 모든 사망 표식을 제거했습니다."), true);
 
         DeathMarkerServerMod.LOGGER.info(context.getSource().getTextName() + " 사용자가 /clearallmarkers 명령으로 " + count + "개의 표식을 제거했습니다.");
-        return Command.SINGLE_SUCCESS; // 성공 시 1 반환
+        return Command.SINGLE_SUCCESS;
     }
 }
